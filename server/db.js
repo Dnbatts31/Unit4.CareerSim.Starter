@@ -131,6 +131,12 @@ const createCartProducts = async (cart_id, product_id, quantity) => {
   return response.rows;
 };
 
+//TODO: removeCartProduct 
+
+const removeCartProduct = async (cart_id, product_id){
+
+}
+
 module.exports = {
   client,
   createTables,
@@ -144,4 +150,5 @@ module.exports = {
   authenticate,
   findUserWithToken,
   createCartProducts,
+  removeCartProduct,
 };
