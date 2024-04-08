@@ -130,10 +130,16 @@ const createCartProducts = async (cart_id, product_id, quantity) => {
   ]);
   return response.rows;
 };
-
+const removeProduct = async (product_id) => {
+  const SQL = `DELETE FROM products WHERE id=$1`
+  const response = await client.query(SQL, [
+    product_id
+  ]);
+  return response; 
+}
 //TODO: removeCartProduct 
 
-const removeCartProduct = async (cart_id, product_id){
+const removeCartProduct = async (cart_id, product_id) => {
 
 }
 
@@ -142,6 +148,7 @@ module.exports = {
   createTables,
   createUser,
   createProduct,
+  removeProduct,
   fetchUsers,
   fetchProducts,
   fetchCart,
